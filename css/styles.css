@@ -72,7 +72,8 @@ h3 {
  * 2. Show the overflow in Edge and IE.
  */
 hr {
-	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	        box-sizing: content-box;
 
 	/* 1 */
 	height: 0;
@@ -85,9 +86,15 @@ hr {
 
 @media only screen and (min-width: 822px) {
   .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: stretch;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
   }
   .column {
     width: 50vw;
@@ -116,10 +123,19 @@ hr {
 }
 
 .content-container.spread {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   height: 100%;
 }
 .content-container.spread > * {
@@ -152,12 +168,20 @@ ol.accordion {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-weight: bolder;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .accordion .header-wrapper span svg.rotate-up {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 .accordion .collapse {
   display: block;
@@ -168,6 +192,8 @@ ol.accordion {
 }
 .accordion .collapse.open {
   max-height: 99em;
+  -webkit-transition: max-height 4s cubic-bezier(.28,.68,.28,.68);
+  -o-transition: max-height 4s cubic-bezier(.28,.68,.28,.68);
   transition: max-height 4s cubic-bezier(.28,.68,.28,.68);
 }
 .accordion .collapse > div {
