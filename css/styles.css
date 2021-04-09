@@ -1,0 +1,176 @@
+:root {
+  --font-family-primary: Arial, Helvetica Neue, Helvetica, sans-serif;
+  --font-family-secondary: Arial, Helvetica Neue, Helvetica, sans-serif;
+
+  --font-colour-contrast: #fff;
+  --font-colour-secondary: #666;
+}
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+	line-height: 1.15;
+
+	/* 1 */
+	-webkit-text-size-adjust: 100%;
+
+	/* 2 */
+}
+
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  font-family: var(--font-family-primary);
+	margin: 0;
+  padding: 0;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+	display: block;
+}
+
+header,
+footer,
+article {
+  display: block;
+}
+
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	padding: 0;
+	margin: 0;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+	font-size: 3em;
+  margin: 0.67em 0;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+	box-sizing: content-box;
+
+	/* 1 */
+	height: 0;
+
+	/* 1 */
+	overflow: visible;
+
+	/* 2 */
+}
+
+@media only screen and (min-width: 822px) {
+  .row {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+  }
+  .column {
+    width: 50vw;
+  }
+}
+
+.column {
+  height: 90vh;
+  width: 90vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: 5vh;
+  padding-bottom: 5vh;
+}
+@media only screen and (max-width: 821px) {
+  .column.right {
+    height: auto;
+  }
+}
+
+.column.left {
+  background-image: url(../assets/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.content-container.spread {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+}
+.content-container.spread > * {
+  text-align: left;
+  color: var(--font-colour-contrast);
+}
+.content-container.spread hr {
+  margin-bottom: 2rem;
+  color: var(--font-colour-contrast);
+  width: 5vw;
+  min-width: 3rem;
+}
+
+.column.right article {
+  margin-top: 3rem;
+}
+
+ol.accordion {
+  list-style-type: none;
+  padding-left: 0;
+}
+.accordion li {
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+.accordion li:last-of-type {
+  border-bottom: 1px solid #ddd;
+}
+.accordion .header-wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  font-weight: bolder;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion .header-wrapper span svg.rotate-up {
+  transform: rotate(180deg);
+}
+.accordion .collapse {
+  display: block;
+  max-height: 0px;
+  overflow: hidden;
+  color: var(--font-colour-secondary);
+  line-height: 1.75rem;
+}
+.accordion .collapse.open {
+  max-height: 99em;
+  transition: max-height 4s cubic-bezier(.28,.68,.28,.68);
+}
+.accordion .collapse > div {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
